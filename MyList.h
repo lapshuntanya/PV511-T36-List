@@ -27,6 +27,30 @@ public:
         head = tail = nullptr;
     }
 
+
+    void push_back(U value) {
+        //1. Створюємо вузол
+        Node<U>* item = new Node<U>(value);
+
+        //2. Чи це перший вузол в списку?
+        if (head == nullptr || tail == nullptr) {
+            head = tail = item;
+        }else {
+            //3 Якщо НЕ перший вузол в списку
+            tail->next = &item;
+            tail = item;
+        }
+    }
+
+    void showList() {
+        Node<U>* p = head;
+        while (p != nullptr) {
+            cout << p->info << " ";
+            p = p->next;
+        }
+    }
+
+
 };
 
 
