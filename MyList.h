@@ -16,3 +16,24 @@ public:
         cout << "\tNEXT: " << next << endl << endl;
     }
 };
+
+
+template <typename U>
+class List {
+    Node<U>* head;
+    Node<U>* tail;
+public:
+    List() {
+        head = tail = nullptr;
+    }
+
+};
+
+
+
+
+
+
+
+
+
