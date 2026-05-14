@@ -37,7 +37,7 @@ public:
             head = tail = item;
         }else {
             //3 Якщо НЕ перший вузол в списку
-            tail->next = &item;
+            tail->next = item;
             tail = item;
         }
     }
