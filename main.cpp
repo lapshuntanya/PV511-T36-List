@@ -1,5 +1,5 @@
 #include "MyList.h"
-
+#include <list>
 
 int main() {
     //2, 6, 8, 4
@@ -34,14 +34,40 @@ int main() {
     // nums.showList();
 
 
-    DList<int> nums; //head= tail = nullptr
+    // DList<int> nums; //head= tail = nullptr
+    // nums.push_back(6); //head = tail = 6
+    // nums.push_back(4); //head = 6, tail = 4
+    // nums.push_back(8); //head = 6, tail = 8
+    // nums.push_back(2); //head = 6, tail = 2
+    //
+    // nums.show();
+    // nums.show_reverse();
+
+
+
+    std::list<int> nums;  // STD STL list
     nums.push_back(6); //head = tail = 6
     nums.push_back(4); //head = 6, tail = 4
     nums.push_back(8); //head = 6, tail = 8
-    nums.push_back(2); //head = 6, tail = 2
+    nums.push_back(4); //head = 6, tail = 2
 
-    nums.show();
-    nums.show_reverse();
+
+    std::list<int>::iterator p;
+    std::list<int>::iterator pDel;
+    for (p = nums.begin(); p !=  nums.end();    ) {
+        pDel = p;
+        p++;
+        if (*pDel == 4) {
+            cout << "DELETE: " << *pDel << " ";
+            nums.erase(pDel);
+        }
+    }
+    cout << endl;
+
+    for (int a: nums) {
+        cout << a << " ";
+    } cout << endl;
+
 
 
 

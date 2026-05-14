@@ -76,6 +76,26 @@ class DList {
     DNode<U>* current;
 public:
     DList() { head = nullptr; current = nullptr; }
+    ~DList() {
+
+        DNode<U>* p= head;
+        if (p == nullptr) return;
+        if (p->next == nullptr) {
+            delete p;
+            head = current = nullptr;
+        }
+        else {
+            while (p->next != nullptr) {
+                p = p->next;
+
+                cout << "DELETE: " << p->prev->info << endl;
+                delete p->prev;
+            }
+            cout << "DELETE: " << p->info << endl;
+            delete p;
+        }
+
+    }
 
     void push_back(U value) { //Добавлення нового вузла в кінець списку
         //1. Створюємо новий вузол
