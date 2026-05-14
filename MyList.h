@@ -17,6 +17,21 @@ public:
     }
 };
 
+template <typename T>
+class DNode {
+public:
+    T info;
+    DNode* prev;
+    DNode* next;
+
+    DNode(T value){ info = value; next = prev = nullptr; }
+    void show()const {
+        cout << "INFO: " << info << endl;
+        cout << "\tPREV: " << prev << endl << endl;
+        cout << "\tNEXT: " << next << endl << endl;
+    }
+};
+
 
 template <typename U>
 class List {
