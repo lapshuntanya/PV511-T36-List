@@ -111,7 +111,14 @@ public:
     }
 
     DNode<U>* search(U value) { //Пошук вузла із заданим значенням
-
+        DNode<U>* p = head;
+        while (p != nullptr) {
+            if (p->info == value) {
+                return p;
+            }
+            p = p->next;
+        }
+        return nullptr;
     }
 };
 

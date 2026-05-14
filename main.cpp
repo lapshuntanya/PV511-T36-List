@@ -25,13 +25,24 @@ int main() {
 
 
 
-    List<int> nums; //head= tail = nullptr
+    // List<int> nums; //head= tail = nullptr
+    // nums.push_back(6); //head = tail = 6
+    // nums.push_back(4); //head = 6, tail = 4
+    // nums.push_back(8); //head = 6, tail = 8
+    // nums.push_back(2); //head = 6, tail = 2
+    //
+    // nums.showList();
+
+
+    DList<int> nums; //head= tail = nullptr
     nums.push_back(6); //head = tail = 6
     nums.push_back(4); //head = 6, tail = 4
     nums.push_back(8); //head = 6, tail = 8
     nums.push_back(2); //head = 6, tail = 2
 
-    nums.showList();
+    nums.show();
+    nums.show_reverse();
+
 
 
     return 0;
